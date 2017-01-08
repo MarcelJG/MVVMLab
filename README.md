@@ -1,46 +1,46 @@
-# Zadanie laboratoryjne - Wytw. oprogram. w œrodow. NET	
-Poni¿sze zadanie ma przybli¿yæ tworzenie aplikacji w oparciu o wzorzec Model-View-ViewModel.
+# Zadanie laboratoryjne - Wytw. oprogram. w Å›rodow. NET	
+PoniÅ¼sze zadanie ma przybliÅ¼yÄ‡ tworzenie aplikacji w oparciu o wzorzec Model-View-ViewModel.
 
 ## Cel zadania
-Poni¿sze zadanie ma za cel stworzenie prostej aplikacji wyliczaj¹cej napiwek dla kelnera na podstawie ca³kowitej kwoty zamówienia oraz "procentu" wartoœci zamówienia, który zdecydowaliœmy siê przeznaczyæ na napiwek.
+PoniÅ¼sze zadanie ma za cel stworzenie prostej aplikacji wyliczajÄ…cej napiwek dla kelnera na podstawie caÅ‚kowitej kwoty zamÃ³wienia oraz "procentu" wartoÅ›ci zamÃ³wienia, ktÃ³ry zdecydowaliÅ›my siÄ™ przeznaczyÄ‡ na napiwek.
 
 ## Ready, steady, go!
-### Tworzymy pust¹ solucjê:
-W œrodowisku Visual Studio 2015 tworzymy now¹ pust¹ solucjê: 
+### Tworzymy pustÄ… solucjÄ™:
+W Å›rodowisku Visual Studio 2015 tworzymy nowÄ… pustÄ… solucjÄ™: 
   * Przy tworzeniu nowego projektu wybieramy z drzewa "Templates" - Other Project Types => Visual Studio Solutions
-  * Wybieramy "Blank solution" i nazywamy solucjê: `TipCalculator`
+  * Wybieramy "Blank solution" i nazywamy solucjÄ™: `TipCalculator`
   ![Screenshot1](http://i.imgur.com/ulm16rl.png)
   
 ### Portable Class Library
 #### Tworzymy projekt
-Po utworzeniu solucji, mo¿emy dodaæ do niej pierwszy projekt.
+Po utworzeniu solucji, moÅ¼emy dodaÄ‡ do niej pierwszy projekt.
 
-Bêdzie to projekt typu `Portable Class Library`. 
+BÄ™dzie to projekt typu `Portable Class Library`. 
 
-Nazywamy go `TipCalculator.Core`. Tutaj bêdziemy dodawaæ za chwilê ca³¹ logikê aplikacji.
+Nazywamy go `TipCalculator.Core`. Tutaj bÄ™dziemy dodawaÄ‡ za chwilÄ™ caÅ‚Ä… logikÄ™ aplikacji.
 ![Imgur](http://i.imgur.com/3udk1Ho.png)
 
-Po dodaniu projektu, Visual Studio zapyta nas jeszcze o "targety" naszej biblioteki - w tym miejscu wystarczy, ¿e wybierzemy opcje:
+Po dodaniu projektu, Visual Studio zapyta nas jeszcze o "targety" naszej biblioteki - w tym miejscu wystarczy, Å¼e wybierzemy opcje:
   * .NET Framework 4.5.1
   * Windows 8.1
   
 ![Imgur](http://i.imgur.com/6b7Em8W.png)
 
-#### Dodajemy bibliotekê `MvvmCross`
-Po utworzeniu projektu, Twoja solucja powinna wygl¹daæ mniej wiêcej tak:
+#### Dodajemy bibliotekÄ™ `MvvmCross`
+Po utworzeniu projektu, Twoja solucja powinna wyglÄ…daÄ‡ mniej wiÄ™cej tak:
 ![Imgur](http://i.imgur.com/eOs2MAM.png)
 
-Po utworzeniu projektu czas dodaæ bibliotekê `MvvmCross`, która jest dobrym wsparciem przy tworzeniu aplikacji w oparciu o wzorzec MVVM.
+Po utworzeniu projektu czas dodaÄ‡ bibliotekÄ™ `MvvmCross`, ktÃ³ra jest dobrym wsparciem przy tworzeniu aplikacji w oparciu o wzorzec MVVM.
   * W tym celu wybieramy z menu Tools => NuGet Package Manager => `Package Manager Console`
-  * Teraz powinno siê pokazaæ okno w dolnej czêœci Visual Studio, w które wpisujemy polecenie `Install-Package MvvmCross.Core` i potwierdzamy enterem:
+  * Teraz powinno siÄ™ pokazaÄ‡ okno w dolnej czÄ™Å›ci Visual Studio, w ktÃ³re wpisujemy polecenie `Install-Package MvvmCross.Core` i potwierdzamy enterem:
 ![Imgur](http://i.imgur.com/IS3lNSY.png)
 
-#### Tworzymy serwis wyliczaj¹cy napiwek
+#### Tworzymy serwis wyliczajÄ…cy napiwek
 
- 1. Usuñ z projektu plik `Class1.cs` - nie bêdzie on potrzebny
- 2. Utwórz nowy folder w projekcie o nazwie `Services`
- 3. W folderze `Services` utwórz nowy folder o nazwie `Interfaces`
- 4. W folderze `Interfaces` utwórz nowy interfejs o nazwie `ICalculation`
+ 1. UsuÅ„ z projektu plik `Class1.cs` - nie bÄ™dzie on potrzebny
+ 2. UtwÃ³rz nowy folder w projekcie o nazwie `Services`
+ 3. W folderze `Services` utwÃ³rz nowy folder o nazwie `Interfaces`
+ 4. W folderze `Interfaces` utwÃ³rz nowy interfejs o nazwie `ICalculation`
  
     ```c#
     namespace TipCalculator.Core.Services.Interfaces
@@ -51,7 +51,7 @@ Po utworzeniu projektu czas dodaæ bibliotekê `MvvmCross`, która jest dobrym wspa
         }
     }
     ```
- 5. W folderze `Services` utwórz implementacjê tego interfejsu nazywaj¹c klasê `Calculation`
+ 5. W folderze `Services` utwÃ³rz implementacjÄ™ tego interfejsu nazywajÄ…c klasÄ™ `Calculation`
  
      ```c#
      namespace TipCalculator.Core.Services
@@ -65,25 +65,25 @@ Po utworzeniu projektu czas dodaæ bibliotekê `MvvmCross`, która jest dobrym wspa
          }
      }
      ```
- 6. To wszystko! W³aœnie utworzyliœmy logikê biznesow¹ naszej aplikacji. :)
+ 6. To wszystko! WÅ‚aÅ›nie utworzyliÅ›my logikÄ™ biznesowÄ… naszej aplikacji. :)
  
 #### Tworzymy nasz ViewModel
 
 Interfejs naszej aplikacji powinien:
 
- * u¿ywaæ:
-   * naszego serwisu, który bêdzie wylicza³ wartoœæ napiwka
- * posiadaæ mo¿liwoœæ wprowadzania:
-   * wartoœci rachunku
-   * procentu wartoœci rachunku, jakim chcemy nagrodziæ kelnera
- * posiadaæ mo¿liwoœæ wyœwietlania:
-   * wartoœci napiwku
+ * uÅ¼ywaÄ‡:
+   * naszego serwisu, ktÃ³ry bÄ™dzie wyliczaÅ‚ wartoÅ›Ä‡ napiwka
+ * posiadaÄ‡ moÅ¼liwoÅ›Ä‡ wprowadzania:
+   * wartoÅ›ci rachunku
+   * procentu wartoÅ›ci rachunku, jakim chcemy nagrodziÄ‡ kelnera
+ * posiadaÄ‡ moÅ¼liwoÅ›Ä‡ wyÅ›wietlania:
+   * wartoÅ›ci napiwku
 
-Aby umo¿liwiæ reprezentacjê interfejsu u¿ytkownika musimy zbudowaæ `model` go opisuj¹cy - czyli `ViewModel`
+Aby umoÅ¼liwiÄ‡ reprezentacjÄ™ interfejsu uÅ¼ytkownika musimy zbudowaÄ‡ `model` go opisujÄ…cy - czyli `ViewModel`
 
-W `MvvmCross`, wszystkie `ViewModel-e` powinny dziedziczyæ po klasie `MvxViewModel`.
+W `MvvmCross`, wszystkie `ViewModel-e` powinny dziedziczyÄ‡ po klasie `MvxViewModel`.
 
-Utwórz teraz nowy folder w projekcie o nazwie `ViewModels` i dodaj klasê `TipViewModel`:
+UtwÃ³rz teraz nowy folder w projekcie o nazwie `ViewModels` i dodaj klasÄ™ `TipViewModel`:
 ```c#
 using MvvmCross.Core.ViewModels;
 using TipCalculator.Core.Services.Interfaces;
@@ -96,13 +96,13 @@ namespace TipCalculator.Core.ViewModels
 
       public TipViewModel(ICalculation calculation)
       {
-        //TipViewModel jest tworzony razem z serwisem wyliczaj¹cym napiwek
+        //TipViewModel jest tworzony razem z serwisem wyliczajÄ…cym napiwek
         _calculation = calculation;
       }
 
       public override void Start()
       {
-        //ustawiamy wstêpne wartoœci
+        //ustawiamy wstÄ™pne wartoÅ›ci
         _subTotal = 100;
         _percent = 10;
         Recalcuate();
@@ -117,8 +117,8 @@ namespace TipCalculator.Core.ViewModels
         set
         {
           _subTotal = value;
-          RaisePropertyChanged(() => SubTotal);    //powiadamiamy klasê bazow¹ MvxViewModel o tym ¿e model siê zmieni³
-          Recalcuate(); //przeliczamy wartoœæ napiwku
+          RaisePropertyChanged(() => SubTotal);    //powiadamiamy klasÄ™ bazowÄ… MvxViewModel o tym Å¼e model siÄ™ zmieniÅ‚
+          Recalcuate(); //przeliczamy wartoÅ›Ä‡ napiwku
         }
       }
 
@@ -157,7 +157,7 @@ namespace TipCalculator.Core.ViewModels
 
 #### Konfiguracja aplikacji
 
-Teraz pozosta³o nam stworzyæ w g³ównym folderze projektu klasê `App`, w której zarejestrujemy nasz serwis oraz umo¿liwimy start aplikacji:
+Teraz pozostaÅ‚o nam stworzyÄ‡ w gÅ‚Ã³wnym folderze projektu klasÄ™ `App`, w ktÃ³rej zarejestrujemy nasz serwis oraz umoÅ¼liwimy start aplikacji:
 
 ```c#
 using MvvmCross.Core.ViewModels;
@@ -170,9 +170,9 @@ namespace TipCalculator.Core
 {
     public class App : MvxApplication
     {
-        //rejestrujemy typ odpowiadaj¹cy za serwis -> gdy korzystamy z interfejsu ICalculation, to wykorzystywana bêdzie jego implementacja zawarta w klasie Calculation
+        //rejestrujemy typ odpowiadajÄ…cy za serwis -> gdy korzystamy z interfejsu ICalculation, to wykorzystywana bÄ™dzie jego implementacja zawarta w klasie Calculation
         Mvx.RegisterType<ICalculation, Calculation>(); 
-        //rejestrujemy singleton odpowiadaj¹cy za start aplikacji
+        //rejestrujemy singleton odpowiadajÄ…cy za start aplikacji
         Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<TipViewModel>()); 
     }
 }
@@ -184,31 +184,33 @@ namespace TipCalculator.Core
 
 #### Tworzymy projekt
 Dodaj nowy projekt do solucji - `Blank App (Universal Windows)` o nazwie `TipCalculator.UWP`
+
 ![Imgur](http://i.imgur.com/MOxtNE8.png)
 
-Po dodaniu projektu, struktura solucji powinna wygl¹daæ mniej wiêcej tak:
+Po dodaniu projektu, struktura solucji powinna wyglÄ…daÄ‡ mniej wiÄ™cej tak:
+
 ![Imgur](http://i.imgur.com/XLuYjzQ.png)
 
 #### Dodajemy MvvmCross
 
-1. Usuwamy plik MainPage.xaml - nikomu on nie bêdzie potrzebny :)
+1. Usuwamy plik MainPage.xaml - nikomu on nie bÄ™dzie potrzebny :)
 
-2. Podobnie jak w poprzednim projekcie dodajemy bibliotekê `MvvmCross` poleceniem `Install-Package MvvmCross.Core` w `Package Manager Console`
+2. Podobnie jak w poprzednim projekcie dodajemy bibliotekÄ™ `MvvmCross` poleceniem `Install-Package MvvmCross.Core` w `Package Manager Console`
 ![Imgur](http://i.imgur.com/1MmoC5G.png)
 
-#### Dodajemy referencjê do projektu TipCalculator.Core
+#### Dodajemy referencjÄ™ do projektu TipCalculator.Core
 
 1. Wybieramy prawym przyciskiem myszy menu kontekstowe pola `References` projektu `TipCalculator.UWP` i wybieramy `Add Reference...`
    
    ![Imgur](http://i.imgur.com/cQjtBd5.png)
 
-2. Wyœwietli siê Reference Manager i w nim zaznaczymy projekt `TipCalculator.Core`
+2. WyÅ›wietli siÄ™ Reference Manager i w nim zaznaczymy projekt `TipCalculator.Core`
 
    ![Imgur](http://i.imgur.com/gOEeCFr.png)
 
 #### Konfiguracja aplikacji UWP
 
-1. Utwórz w g³ównym folderze projektu now¹ klasê `Setup` dziedzicz¹c¹ po `MvxWindowsSetup`
+1. UtwÃ³rz w gÅ‚Ã³wnym folderze projektu nowÄ… klasÄ™ `Setup` dziedziczÄ…cÄ… po `MvxWindowsSetup`
 
    ```c#
    using Windows.UI.Xaml.Controls;
@@ -232,7 +234,7 @@ Po dodaniu projektu, struktura solucji powinna wygl¹daæ mniej wiêcej tak:
    }
    ```
 
-2. W pliku `App.xaml.cs` zmieniamy nastêpuj¹ce linijki w metodzie `OnLaunched`:
+2. W pliku `App.xaml.cs` zmieniamy nastÄ™pujÄ…ce linijki w metodzie `OnLaunched`:
    ```c#
    // When the navigation stack isn't restored navigate to the first page,
    // configuring the new page by passing required information as a navigation
@@ -250,13 +252,13 @@ Po dodaniu projektu, struktura solucji powinna wygl¹daæ mniej wiêcej tak:
 
 #### Tworzymy widok
 
-1. Utwórz w projekcie UWP folder `Views`
-2. Dodaj w tym folderze now¹ stronê typu `Blank Page` i nazwij j¹ `TipView.xaml`
-3. W folderze `Views` powinny zostaæ utworzone dwa pliki
+1. UtwÃ³rz w projekcie UWP folder `Views`
+2. Dodaj w tym folderze nowÄ… stronÄ™ typu `Blank Page` i nazwij jÄ… `TipView.xaml`
+3. W folderze `Views` powinny zostaÄ‡ utworzone dwa pliki
  * TipView.xaml
  * TipView.xaml.cs
-4. PrzejdŸ do pliku TipView.xaml.cs i zmieñ klasê po której dziedziczy `TipView` z `Page` na `MvxWindowsPage`.
-5. Twój plik TipView.xaml.cs powinien wygl¹daæ tak:
+4. PrzejdÅº do pliku TipView.xaml.cs i zmieÅ„ klasÄ™ po ktÃ³rej dziedziczy `TipView` z `Page` na `MvxWindowsPage`.
+5. TwÃ³j plik TipView.xaml.cs powinien wyglÄ…daÄ‡ tak:
    ```c#
    using MvvmCross.WindowsUWP.Views;
 
@@ -276,7 +278,7 @@ Po dodaniu projektu, struktura solucji powinna wygl¹daæ mniej wiêcej tak:
      }
    }
    ```
-6. PrzejdŸ do pliku TipView.xaml i zmieñ jego zawartoœæ na:
+6. PrzejdÅº do pliku TipView.xaml i zmieÅ„ jego zawartoÅ›Ä‡ na:
    ```xaml
    <views:MvxWindowsPage
     x:Class="TipCalculator.UWP.Views.TipView"
